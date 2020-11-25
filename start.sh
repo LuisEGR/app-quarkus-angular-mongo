@@ -3,6 +3,7 @@
 ## Rebuild the Angular App (Nginx Docker Container)
 cd frontend 
 rm -rf dist
+npm install
 npm run build
 docker build -t luisgonzalez/frontend .
 
