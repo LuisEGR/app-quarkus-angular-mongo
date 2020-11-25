@@ -1,0 +1,24 @@
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-text-centered">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users" >
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            <td>
+                <div class="buttons">
+                <button class="button is-small is-outlined is-info" (click)="updateUser(user)">Update</button>
+                   
+                <button class="button is-small is-outlined is-danger" (click)="deleteUser(user)">Delete</button>
+            </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

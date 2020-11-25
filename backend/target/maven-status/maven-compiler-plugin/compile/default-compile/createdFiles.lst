@@ -1,0 +1,3 @@
+org/acme/mongodb/User.class
+org/acme/mongodb/UserService.class
+org/acme/mongodb/UserAdminResource.class

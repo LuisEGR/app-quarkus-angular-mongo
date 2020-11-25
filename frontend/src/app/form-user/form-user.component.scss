@@ -1,0 +1,5 @@
+@import "../../../node_modules/bulma/bulma.sass";
+
+input.ng-touched.ng-invalid {
+    @extend .is-danger !optional;
+}

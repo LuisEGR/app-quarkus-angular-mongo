@@ -1,0 +1,70 @@
+<form [formGroup]="userForm"
+    (ngSubmit)="submitForm()">
+    <div class="field">
+        <label class="label">First Name</label>
+        <div class="control has-icons-left has-icons-right">
+            <input class="input is-medium"
+                required
+                autocomplete="not-first-name"
+                type="text"
+                formControlName="firstName"
+                placeholder="First Name">
+            <span class="icon is-left">
+                <i class="fas fa-user fa-sm"></i>
+            </span>
+            <p class="help is-danger"
+                *ngIf="userForm.controls.firstName.touched && userForm.controls.firstName.invalid">
+                <span *ngIf="userForm.controls.firstName.errors.required">First name required</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Last Name</label>
+        <div class="control has-icons-left has-icons-right">
+            <input class="input is-medium"
+                required
+                autocomplete="not-last-name"
+                type="text"
+                formControlName="lastName"
+                placeholder="Last Name">
+            <span class="icon is-left">
+                <i class="fas fa-user fa-sm"></i>
+            </span>
+            <p class="help is-danger"
+                *ngIf="userForm.controls.lastName.touched && userForm.controls.lastName.invalid">
+                <span *ngIf="userForm.controls.lastName.errors.required">Last name required</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Email</label>
+        <div class="control has-icons-left has-icons-right">
+            <input class="input is-medium"
+                required
+                autocomplete="off"
+                type="email"
+                formControlName="email"
+                email
+                placeholder="Email">
+            <span class="icon is-left">
+                <i class="fas fa-envelope fa-sm"></i>
+            </span>
+            <p class="help is-danger"
+                *ngIf="userForm.controls.email.touched && userForm.controls.email.invalid">
+                <span *ngIf="userForm.controls.email.errors.required">Email required</span>
+                <span *ngIf="userForm.controls.email.errors.email">Invalid Email</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="column">
+            <button type="submit"
+                [ngClass]="{'is-loading':isSubmitted}"
+                [disabled]="!userForm.valid ||isSubmitted"
+                class="button is-primary is-medium is-pulled-right">Submit</button>
+        </div>
+    </div>
+</form>
