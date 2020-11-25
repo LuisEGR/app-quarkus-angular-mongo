@@ -20,6 +20,8 @@ services:
       - "8888:80"
   backend:
     image: "luisgonzalez/users-admin"
+    depends_on: 
+      - database
     ports:
       - "8080:8080"
     networks:
