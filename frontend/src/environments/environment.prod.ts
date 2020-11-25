@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiHost: 'http://localhost:8081'
+  apiHost: 'http://users-app.apimocks.io:8080'
 };
