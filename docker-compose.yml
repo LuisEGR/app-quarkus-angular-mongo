@@ -19,7 +19,7 @@ services:
     ports:
       - "8888:80"
   backend:
-    image: "luisgonzalez/users-admin:1.0-SNAPSHOT"
+    image: "luisgonzalez/users-admin"
     ports:
       - "8080:8080"
     networks:
